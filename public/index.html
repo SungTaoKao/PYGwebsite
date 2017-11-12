@@ -9,16 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    
+    <link href="src/styles/datepickk.css" rel="stylesheet"/>
+    <script src="src/js/datepickk.js"></script>
   </head>
     
   <body>
@@ -59,43 +52,40 @@
               </form>
           </div>
       </nav>
-      
-      <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-1">Jumbotron d1</h1>
-            <h1 class="display-2">Jumbotron d2</h1>
-            <h1 class="display-3">Jumbotron d3</h1>
-            <h1 class="display-4">Jumbotron d4</h1>
-            <h1 class="display-5">Jumbotron d5</h1>
-              
-            <p class="lead">fluid jumbotron example</p>
-          </div>
-      </div>
-   
       <div class="container">
-        <img src="img/banner.jpg" alt="banner.jpg" style="margin:auto;"/>
-      </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+          <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-1">Jumbotron d1</h1>
+                <h1 class="display-2">Jumbotron d2</h1>
+                <h1 class="display-3">Jumbotron d3</h1>
+                <h1 class="display-4">Jumbotron d4</h1>
+                <h1 class="display-5">Jumbotron d5</h1>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+                <p class="lead">fluid jumbotron example</p>
+              </div>
+          </div>
+          
+          
+          
+          <div class="container">
+            <img src="img/banner.jpg" alt="banner.jpg" style="margin:auto;"/>
+          </div>
+          
+          <br>
+          
+          <div class="container-fluid">
+            <div id="calendarContainer"></div>
+          </div>
+    </div>
+      
+      <h1><b>HELLO FRASER</b></h1>
+      
+    <script>
+        var datepicker = new Datepickk();
+        datepicker.container= document.getElementById("calendarContainer");
+        datepicker.locked = true;
+        datepicker.show();
     </script>
+    
   </body>
 </html>
